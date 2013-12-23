@@ -1,10 +1,18 @@
 <% if user_signed_in? %>
 	
-	Witaj w Elektronicznm Systemie Nadawania Uprawnień.
-	Przed wygenerowaniem nowego wniosku zapoznaj się z materiałami zawartymi w dziale <%= link_to "Informacji", pages_pomoc_path %>
+	<p>
+			Witaj w Elektronicznym Systemie Nadawania Uprawnień.
+		Przed wygenerowaniem nowego wniosku zapoznaj się z materiałami zawartymi w dziale <%= link_to "Informacji", pages_pomoc_path %>
+	</p>
+	<p>
+		Uzupełnij również swoje dane w <%= link_to "ustawieniach", edit_user_registration_path %>
+	</p>
+
+
 	<% else %>
+
 	<div class="hero-unit">
-		<p>Kompania Węglowa S.A.</p>
+		<p>Welcome</p>
 		<h3>Elektroniczny System Nadawania Uprawnień</h3>
 		<p><%= link_to "Zarejestruj!", new_user_registration_path, class: "btn btn-primary" %> </p>
 	</div>
