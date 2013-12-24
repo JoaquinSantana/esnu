@@ -5,6 +5,7 @@
   <%= f.error_notification %>
   <%= f.input :imie, label: 'Imię' %>
   <%= f.input :nazwisko %>
+  <%= f.input :branch_id, label: 'Oddział', collection: Branch.all %>
   <%= f.input :email %>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
