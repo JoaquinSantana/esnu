@@ -1,9 +1,18 @@
 <p id="notice"><%= notice %></p>
+<% if @branch.users.nil? || @branch.users.count == 0 %>
+	Do oddziału <strong><%= @branch.name %></strong> nie ma przypisanych użytkowników
+	<% else %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @branch.name %>
-</p>
+			<p>
+			Do oddziału <strong><%= @branch.name %></strong> przypisani są następujący pracownicy:
+			</p>
+			
+			<% @branch.users.each do |user| %>
+				<ol><%= user.full_name %></ol>
+			<% end %>
+<% end %>
 
-<%= link_to 'Edit', edit_branch_path(@branch) %> |
-<%= link_to 'Back', branches_path %>
+<div class="form-actions">
+	<%= link_to 'Edit', edit_branch_path(@branch), class: 'btn btn -primary' %> |
+	<%= link_to 'Back', branches_path, class: 'btn btn -primary' %>
+</div>

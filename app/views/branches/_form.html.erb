@@ -1,11 +1,9 @@
 <%= simple_form_for(@branch) do |f| %>
   <%= f.error_notification %>
 
-  <div class="form-inputs">
     <%= f.input :name %>
-  </div>
-
-  <div class="form-actions">
-    <%= f.button :submit %>
-  </div>
+    
+		<div class="form-actions">
+			  <%= f.button :submit, 'Utwórz', class: 'btn btn-primary' %> | <%= link_to 'Powrót', branches_path, class: 'btn btn-primary' %>
+		</div>
 <% end %>

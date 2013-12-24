@@ -1,15 +1,6 @@
-<h1>Listing branches</h1>
+<h1 class="page-header">Lista oddziałów</h1>
 
-<table>
-  <thead>
-    <tr>
-      <th>Name</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
-
+<table class="table table-hover">
   <tbody>
     <% @branches.each do |branch| %>
       <tr>
@@ -23,5 +14,6 @@
 </table>
 
 <br>
-
-<%= link_to 'New Branch', new_branch_path %>
+<div class="form-actions">
+  <%= link_to 'Nowy Oddział', new_branch_path, class: 'btn btn-primary' %>
+</div>
