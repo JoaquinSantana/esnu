@@ -1,6 +1,7 @@
 class BranchesController < ApplicationController
   before_action :set_branch, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
+  before_action :admini, only: [:show, :new, :edit, :create, :update, :destroy]
   # GET /branches
   # GET /branches.json
   def index
@@ -70,5 +71,12 @@ class BranchesController < ApplicationController
     # Never trust parameters from the scary internet, only allow the white list through.
     def branch_params
       params.require(:branch).permit(:name)
+    end
+
+    def admini
+      unless current_user.admin?
+        redirect_to(root_url)
+        flash[:danger] = "Nie posiadasz uprawnień do tych zasobów"
+      end
     end
 end
