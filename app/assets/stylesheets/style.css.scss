@@ -6,6 +6,11 @@ body {
 	padding-top: 50px;
 }
 
+.page-header {
+	padding: 10px 0px 10px 10px;
+	background-color: lighten($grayLight, 30%);
+}
+
 /* Footer */
 
 .footer {
