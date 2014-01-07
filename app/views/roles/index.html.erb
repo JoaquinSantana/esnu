@@ -1,0 +1,32 @@
+<h1 class="page-header">Dostępne Role</h1>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>Nazwa</th>
+      <th>Opis</th>
+      <th>Numer</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @roles.each do |role| %>
+      <tr>
+        <td><%= role.nazwa %></td>
+        <td><%= role.opis %></td>
+        <td><%= role.numer %></td>
+        <td><%= link_to 'Show', role %></td>
+        <td><%= link_to 'Edit', edit_role_path(role) %></td>
+        <td><%= link_to 'Destroy', role, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<div class="form-actions">
+  <%= link_to 'Dodaj role', new_role_path, class: 'btn btn-primary' %>
+</div>

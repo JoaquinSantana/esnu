@@ -1,7 +1,7 @@
 class BranchesController < ApplicationController
   before_action :set_branch, only: [:show, :edit, :update, :destroy]
   before_filter :authenticate_user!
-  before_action :admini, only: [:show, :new, :edit, :create, :update, :destroy]
+  before_action :admini
   # GET /branches
   # GET /branches.json
   def index

@@ -1,5 +1,7 @@
 Esnu::Application.routes.draw do
 
+  resources :roles
+
   resources :branches
 
   devise_for :users
