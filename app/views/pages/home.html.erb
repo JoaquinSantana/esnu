@@ -23,6 +23,7 @@
 							<th>Numer:</th>
 							<th>Nazwa</th>
 							<th>Opis:</th>
+							<th></th>
 						</tr>
 					</thead>
 
@@ -31,7 +32,8 @@
 							<tr>	
 								<td><%= rola.numer %></td>
 								<td><%= rola.nazwa %></td>
-								<td><%= rola.opis %></td> 
+								<td><%= rola.opis %></td>
+								<td><%= button_to 'Dodaj do wniosku', line_items_path(role_id: rola), class: 'btn btn-primary' %></td>
 							</tr>
 						<% end %>
 					</tbody>
