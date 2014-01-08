@@ -6,6 +6,10 @@ body {
 	padding-top: 50px;
 }
 
+.table-vcenter td {
+   vertical-align: middle!important;
+}
+
 .page-header {
 	padding: 10px 0px 10px 10px;
 	background-color: lighten($grayLight, 30%);
