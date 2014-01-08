@@ -1,11 +1,8 @@
-<h2>Twój wniosek:</h2>
+<h4 class="page-header">Twój wniosek:</h4 class="page-header">
 
 <table class="table">
 
 	<%= render(cart.line_items) %>	
 
 </table>
-
-<p>Wniosek zawiera: <%= cart.suma_rol %> role</p>
-
 <%= button_to 'Usuń wniosek', cart, method: :delete, data: { confirm: 'Czy aby na pewno chcesz usunąć wniosek?'} %>

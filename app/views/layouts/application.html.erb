@@ -12,16 +12,18 @@
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 			<% end %>
-			<div class="row">
-				<div class="span10">
-					<%= yield %>
+			<% if user_signed_in? %>
+				<div class="row">
+					<div class="span10">
+						<%= yield %>
+					</div>
+					<div class="span2">
+						<%= render @cart %>
+					</div>
 				</div>
-				<div class="span2">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ex, fuga, odio labore sunt nulla eum dolor architecto. Eos, ducimus doloribus amet quam nihil dolor omnis sed itaque magnam corrupti quos ratione nostrum fugit dolorum dignissimos quo ab possimus autem explicabo aliquid tempore aliquam similique magni ipsam commodi voluptatum esse consequuntur.
-				</div>
-
-			</div>
-		
-
+			<% else %>
+				<%= yield %>
+			<% end %>
 		<%= render 'layouts/footer' %>
 	</div>
 </html>
