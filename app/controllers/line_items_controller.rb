@@ -35,7 +35,8 @@ class LineItemsController < ApplicationController
         format.html { redirect_to @line_item.cart }
         format.json { render action: 'show', status: :created, location: @line_item }
       else
-        format.html { render action: 'new' }
+        format.html { redirect_to root_path }
+        flash[:error] = "Wnioskujesz już o tą rolę"
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end
