@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140107131626) do
+ActiveRecord::Schema.define(version: 20140110131850) do
 
   create_table "branches", force: true do |t|
     t.string   "name"
@@ -30,10 +30,21 @@ ActiveRecord::Schema.define(version: 20140107131626) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "ilosc",      default: 1
+    t.integer  "order_id"
   end
 
   add_index "line_items", ["cart_id"], name: "index_line_items_on_cart_id"
+  add_index "line_items", ["order_id"], name: "index_line_items_on_order_id"
   add_index "line_items", ["role_id"], name: "index_line_items_on_role_id"
+
+  create_table "orders", force: true do |t|
+    t.string   "obszar"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+    t.string   "pracownik"
+  end
+
+  add_index "orders", ["pracownik"], name: "index_orders_on_pracownik"
 
   create_table "roles", force: true do |t|
     t.string   "nazwa"

@@ -1,4 +1,5 @@
 <% if user_signed_in? %>
+	<h4 class="page-header">Role</h4>
 
 	<% if current_user.admin? %>
 		<p>Witaj <%= current_user.imie %></p>
@@ -13,8 +14,8 @@
 		Uzupełnij również swoje dane w <%= link_to "ustawieniach", edit_user_registration_path %>
 	</p>
 	<p>Możesz wnioskować o role znajdujące się w poniższym katalogu</p>
+	&nbsp;
 			<div class="row">
-				<h4 class="page-header">Role</h4>
 				
 				<table class="table table-hover table-vcenter">
 
