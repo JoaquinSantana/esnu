@@ -14,7 +14,7 @@
 	</p>
 	<p>Możesz wnioskować o role znajdujące się w poniższym katalogu</p>
 			<div class="row">
-				<h2 class="page-header">Role</h2>
+				<h4 class="page-header">Role</h4>
 				
 				<table class="table table-hover table-vcenter">
 
@@ -33,7 +33,7 @@
 								<td><%= rola.numer %></td>
 								<td><%= rola.nazwa %></td>
 								<td><%= rola.opis %></td>
-								<td><%= button_to 'Dodaj do wniosku', line_items_path(role_id: rola), class: 'btn btn-primary', remote: true %></td>
+								<td><%= button_to 'Dodaj do wniosku', line_items_path(role_id: rola), remote: true, class: 'btn btn-primary' %></td>
 							</tr>
 						<% end %>
 					</tbody>

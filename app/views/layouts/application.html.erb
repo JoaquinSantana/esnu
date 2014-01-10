@@ -18,7 +18,9 @@
 						<%= yield %>
 					</div>
 					<div class="span2">
-						<%= render @cart %>
+						<% if @cart %>
+							<%= render @cart %>
+						<% end %>
 					</div>
 				</div>
 			<% else %>
