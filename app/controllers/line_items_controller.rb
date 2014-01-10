@@ -33,6 +33,7 @@ class LineItemsController < ApplicationController
       if @line_item.save
         format.html { redirect_to root_path }
         format.json { render action: 'show', status: :created, location: @line_item }
+        format.js
       else
         format.html { redirect_to root_path }
         flash[:error] = "Wnioskujesz już o tą rolę"

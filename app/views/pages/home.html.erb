@@ -33,7 +33,7 @@
 								<td><%= rola.numer %></td>
 								<td><%= rola.nazwa %></td>
 								<td><%= rola.opis %></td>
-								<td><%= button_to 'Dodaj do wniosku', line_items_path(role_id: rola), class: 'btn btn-primary' %></td>
+								<td><%= button_to 'Dodaj do wniosku', line_items_path(role_id: rola), class: 'btn btn-primary', remote: true %></td>
 							</tr>
 						<% end %>
 					</tbody>

@@ -1,8 +1,15 @@
-<h4 class="page-header">Twój wniosek:</h4 class="page-header">
+<div id="sidebar">
+	<h4 class="page-header">Twój wniosek:</h4 class="page-header">
 
-<table class="table">
+	<% if cart.line_items.empty? %>
+		Aktualnie o nic nie wnioskujesz
+	<% else %>
+		<table class="table">
 
-	<%= render(cart.line_items) %>	
+			<%= render(cart.line_items) %>	
 
-</table>
-<%= button_to 'Usuń wniosek', cart, method: :delete, data: { confirm: 'Czy aby na pewno chcesz usunąć wniosek?'} %>
+		</table>
+		<%= button_to 'Usuń wniosek', cart, method: :delete, data: { confirm: 'Czy aby na pewno 
+		chcesz usunąć wniosek?'} %>
+	<% end %>
+</div>
