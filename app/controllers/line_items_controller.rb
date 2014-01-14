@@ -27,7 +27,7 @@ class LineItemsController < ApplicationController
   # POST /line_items.json
   def create
     role = Role.find(params[:role_id])
-    @line_item = @cart.line_items.build(role: role)
+    @line_item = @cart.add_role(role.id)
 
     respond_to do |format|
       if @line_item.save
@@ -36,7 +36,7 @@ class LineItemsController < ApplicationController
         format.json { render action: 'show', status: :created, location: @line_item }
       else
         format.html { redirect_to root_path }
-        flash[:error] = "Wnioskujesz już o tą rolę"
+        flash[:error] = 'wnioskujesz już o tą rolę'
         format.json { render json: @line_item.errors, status: :unprocessable_entity }
       end
     end

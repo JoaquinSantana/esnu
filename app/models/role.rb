@@ -1,5 +1,6 @@
 class Role < ActiveRecord::Base
 	has_many :line_items
+	has_many :orders, through: :line_items
 
 	before_destroy :nie_posiada_line_item
 

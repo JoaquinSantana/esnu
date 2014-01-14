@@ -1,7 +1,8 @@
 <%= simple_form_for(@order, :html => { class: 'form-horizontal' }) do |f| %>
 
-  <%= f.input :obszar %>
 	<%= f.input :pracownik %>
+  <%= f.input :obszar, collection: [ "lokalny", "cała KW"] %>
+    
 
   <div class="form-actions">
     <%= f.button :submit, label: 'Utwórz' %>

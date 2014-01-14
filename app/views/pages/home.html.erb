@@ -1,11 +1,16 @@
-<% if user_signed_in? %>
+
 	<h4 class="page-header">Role</h4>
 
-	<% if current_user.admin? %>
+	<% if current_user.present? && current_user.admin?  %>
 		<p>Witaj <%= current_user.imie %></p>
 
-	<% end %> 
-		
+		<div class="row">
+			<h4>Wnioski</h4>
+			<p>Zobacz wnioski <%= link_to "Wnioski", orders_path %></a></p>
+		</div>
+
+	<% else %>
+	<!-- Niezalogowany uzytkownik -->
 	<p>
 			Witaj w Elektronicznym Systemie Nadawania Uprawnień.
 		Przed wygenerowaniem nowego wniosku zapoznaj się z materiałami zawartymi w dziale <%= link_to "Informacji", pages_pomoc_path %>
@@ -34,7 +39,7 @@
 								<td><%= rola.numer %></td>
 								<td><%= rola.nazwa %></td>
 								<td><%= rola.opis %></td>
-								<td><%= button_to 'Dodaj do wniosku', line_items_path(role_id: rola), remote: true, class: 'btn btn-primary' %></td>
+								<td><%= button_to 'Dodaj do wniosku', line_items_path(role_id: rola), class: 'btn btn-primary' %></td>
 							</tr>
 						<% end %>
 					</tbody>
@@ -42,14 +47,9 @@
 			</div>
 
 
-
-	<% else %>
-
 		<div class="hero-unit">
 			<p>Welcome</p>
 			<h3>Elektroniczny System Nadawania Uprawnień</h3>
 			<%= link_to "Zarejestruj", new_user_registration_path, class: "btn btn-primary" %>
 		</div>
-
-<% end %>
-
+<% end %> 

@@ -12,7 +12,6 @@
 		<% flash.each do |name, msg| %>
 			<%= content_tag(:div, msg, class: "alert alert-#{name}") %>
 			<% end %>
-			<% if user_signed_in? %>
 				<div class="row">
 					<div class="span10">
 						<%= yield %>
@@ -23,9 +22,6 @@
 						<% end %>
 					</div>
 				</div>
-			<% else %>
-				<%= yield %>
-			<% end %>
 		<%= render 'layouts/footer' %>
 	</div>
 </html>
